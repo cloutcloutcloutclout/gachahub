@@ -19,10 +19,22 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+        runtimeOnly 'org.apache.tomcat.embed:tomcat-embed-jasper'  // No version — let Boot manage it
+        runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+        implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.1'
+
+        runtimeOnly 'com.mysql:mysql-connector-j'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    }
+
 
 tasks.named('test') {
 	useJUnitPlatform()
