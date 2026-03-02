@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
+    // normal directs
     @GetMapping("/")
     public String home() {
         return "redirect:/login";
     }
-
     @GetMapping("/login")
     public String login() {
         return "login";
     }
+
+    // now I need to work on oAuth, Validators etc.
+
 
 
 
